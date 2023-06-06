@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "manrope", sans-serif;
+  font-size: 28px;
+}
+
+.middle {
+  left: 46%;
+}
