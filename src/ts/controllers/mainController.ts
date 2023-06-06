@@ -1,14 +1,17 @@
 import { DasboardPage } from "../pages/dasboard";
 
 export class MainController {
-  _content: HTMLElement;
+  _content: page.elementRender;
 
-  constructor(content: HTMLElement) {
+  constructor(content: page.elementRender) {
     this._content = content;
   }
 
   async renderPage() {
-    this._content.innerHTML = await DasboardPage.render()
+    await DasboardPage.render({
+      adviceNumber: this._content.adviceNumber,
+      adviceMessage: this._content.adviceMessage
+    })
     await DasboardPage.afterRender();
   }
 

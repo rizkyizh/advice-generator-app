@@ -3,39 +3,10 @@ import AdviceApi from "../networks/advice-api";
 import { generateRandomNumber } from "../utils/util";
 
 export const DasboardPage: page.dasboard = {
-  render: async function () {
+  render: async function (el: page.elementRender) {
     const initialDataRender: Advice = await AdviceApi.getRandomAdvice()
-    return `<div
-        id="content-wrapper"
-        class="bg-DarkGrayishBlue p-4 text-center rounded-md max-w-[600px] mx-auto max-h-96 relative"
-      >
-      <h1 class="text-NeonGreen tracking-widest text-[8px] sm:text-[14px]" id="adviceId">
-      ADVICE #${initialDataRender.adviceNumber}
-      </h1>
-      <p
-      class="font-extrabold text-lingtCyan my-4 text-[16px] sm:text-[28px]"
-      id="adviceMessage"
-      >
-      ${initialDataRender.adviceMessage}
-        </p>
-        <picture>
-          <source
-            media="(min-width: 375px)"
-            srcset="./assets/images/pattern-divider-desktop.svg"
-          />
-          <img
-            class="mx-auto mb-7"
-            src="./assets/images/pattern-divider-mobile.svg"
-            alt="yae sakura"
-          />
-        </picture>
-        <button
-          class="p-2 rounded-full bg-NeonGreen absolute middle hover:bg-lingtCyan"
-          id="btn-next"
-        >
-          <img src="./assets/images/icon-dice.svg" />
-        </button>
-      </div>`
+    el.adviceNumber.innerHTML = `ADVICE #${initialDataRender.adviceNumber.toString()}`;
+    el.adviceMessage.innerHTML = `"${initialDataRender.adviceMessage}"`;
   },
   afterRender: function () {
     console.log("render success!");

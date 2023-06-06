@@ -12,8 +12,14 @@ declare module configuration {
 
 declare module page {
   type dasboard = {
-    render(),
+    render(el: elementRender),
     afterRender(),
     _initialData()
   }
+
+  type elementRender = {
+    adviceNumber: HTMLHeadingElement,
+    adviceMessage: HTMLParagraphElement,
+  }
 }
+
