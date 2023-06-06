@@ -28,8 +28,6 @@ Users should be able to:
 
 ### Links
 
-- [Acknowledgments](#acknowledgments)
-
 - Solution URL: [here](https://github.com/rizkyizh/advice-generator-app/)
 - Live Site URL: [here](https://get-advice-apps.netlify.app/)
 
