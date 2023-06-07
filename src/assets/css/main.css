@@ -10,3 +10,9 @@
 .middle {
   left: 46%;
 }
+
+@media(max-width: 400px){
+  .middle{
+    left: 42%;
+  }
+}
